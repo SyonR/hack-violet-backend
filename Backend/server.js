@@ -8,7 +8,9 @@ const app = express();
 const PORT = 3001;
 
 // Middleware
-app.use(cors()); // Allow frontend to connect
+app.use(cors({
+  origin: 'https://know-your-worth-weld.vercel.app'
+})); // Allow frontend to connect
 app.use(express.json()); // Parse JSON request bodies
 
 // Routes
