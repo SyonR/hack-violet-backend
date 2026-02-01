@@ -9,7 +9,7 @@ const PORT = 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://know-your-worth-weld.vercel.app'
+  origin: 'https://know-your-worth-tau.vercel.app'
 })); // Allow frontend to connect
 app.use(express.json()); // Parse JSON request bodies
 
@@ -19,8 +19,6 @@ app.get('/', (req, res) => {
     message: 'Backend Server is Working!',
   });
 });
-
-
 
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date() });
@@ -36,5 +34,5 @@ app.listen(PORT, async () => {
   console.log(`API Endpoints:`);
   console.log(`   GET  http://localhost:${PORT}/api/salary?job=Software%20Engineer`);
   console.log(`   POST http://localhost:${PORT}/api/salary/calculate`);
-  
+  console.log(`   POST http://localhost:${PORT}/api/chat/message`);
 });
